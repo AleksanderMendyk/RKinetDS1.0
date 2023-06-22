@@ -1,2 +1,2 @@
-# RKinetDS1.0
-Coming soon ...
+# RKinetDS
+This is the fork of KinetDS project
