@@ -1,2 +1,7 @@
 # RKinetDS
-This is the fork of KinetDS project, a software dedicated to the mathematical description of drugs dissolution profiles. R statistical environment with shiny GUI extensions is required.
+This is the fork of KinetDS project
+
+**Changelog**
+22 March 2024
+ - bugs resolved in models mathematical structures
+ - added two more models: double Weibull and Baker-Lonsdale
