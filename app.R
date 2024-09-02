@@ -765,8 +765,10 @@ server <- function(input, output, session) {
         the_best_models_name <- str_split(the_best_models_name_line, "Model name: ")[[1]][2]
         the_best_eq_algebraic_form <- the_best_optimized_eq_file[grepl("Algebraic form: ", the_best_optimized_eq_file)]
         the_best_eq_algebraic_form <- str_split(the_best_eq_algebraic_form, "Algebraic form: ")[[1]][2]
-        the_best_eq_rmse <- the_best_optimized_eq_file[grepl("RMSE:  ", the_best_optimized_eq_file)]
-        the_best_eq_rmse_value <- str_split(the_best_eq_rmse, "RMSE:  ")[[1]][2]
+        the_best_eq_R2 <- the_best_optimized_eq_file[grepl("R2: ", the_best_optimized_eq_file)]
+        the_best_eq_R2_value <- str_split(the_best_eq_R2, "R2: ")[[1]][2]
+        #the_best_eq_rmse <- the_best_optimized_eq_file[grepl("RMSE:  ", the_best_optimized_eq_file)]
+        #the_best_eq_rmse_value <- str_split(the_best_eq_rmse, "RMSE:  ")[[1]][2]
         the_best_data <- read.csv(the_best_model_filename, header = TRUE, sep="\t")
 
         # plot
@@ -780,7 +782,7 @@ server <- function(input, output, session) {
                                                    y=c(0.2,0.15,0.1),
                                                    text=c(paste("Model: ", the_best_models_name, sep=""),
                                                           paste("Equation: ", the_best_eq_algebraic_form, sep=""),
-                                                          paste("RMSE: ", the_best_eq_rmse_value, sep="")
+                                                          paste("R2: ", the_best_eq_R2_value, sep="")
                                                         ),
                                     textposition = "left center",
                                     textfont = list(family= "Times", size= 18, color= "DarkOrange"),
