@@ -1,0 +1,39 @@
+List of model equations included in the software
+
+models:
+  Zero order: C[1]*t                                                              # 1
+  Zero order with Q0: C[1]*t+C[2]                                                 # 2
+  First order: 100*(1-exp(-C[1]*t))                                               # 3
+  First order with lag time: 100*(1-exp(-C[1]*t-C[2]))                            # 4
+  Second order: 100*(1-(C[1]/(1+C[1]*C[2]*t)))                                    # 5
+  Second order with lag time: 100*(1-(C[1]/(1+C[1]*C[2]*(t-C[3]))))               # 6
+  Third order: 100*(1-(1/(C[1]*t+1/(C[2])^2))^0.5)                                # 7
+  Third order with lag time: 100*(1-(1/(C[1]*(t-C[2])+1/(C[3])^2))^0.5)           # 8
+  Michaelis-Menten: 100*t/(C[1]+t)                                                # 9
+  Michaelis-Menten with lag time: 100*(t-C[1])/(C[2]+t-C[1])                      # 10
+  Weibull: 100*(1-exp(-((t^C[1]))/C[2]))                                          # 11
+  Weibull with lag time: 100*(1-exp(-(((t-C[1])^C[2]))/C[3]))                     # 12
+  Double Weibull: 100*(C[1]*(1-exp(-((t^C[2]))/C[3]))+C[4]*(1-exp(-((t^C[5]))/C[6]))) # 13
+  Double Weibull with lag time: 100*(C[1]*(1-exp(-(((t-C[2])^C[3]))/C[4]))+C[5]*(1-exp(-(((t-C[2])^C[6]))/C[7])))   # 14
+  Higuchi: C[1]*t^0.5                                                             # 15
+  Higuchi with lag time: C[1]*(t-C[2])^0.5                                        # 16
+  Hixson-Crowley: 100*(1-(1-C[1]*t)^3)                                            # 17
+  Hixson-Crowley with lag time: 100*(1-(1-C[1]*(t-C[2]))^3)                       # 18
+  Korsmeyer-Peppas: C[1]*t^C[2]                                                   # 19
+  Korsmeyer-Peppas with lag time: C[1]*(t-C[2])^C[3]                              # 20
+  Hill: 100*t^C[1]/C[2]^C[1]+t^C[1]                                               # 21
+  Hill with lag time: 100*(t-C[1])^C[2]/C[3]^C[2]+(t-C[1])^C[2]                   # 22
+  Hopfenberg: 100*(1-(1-C[1]*t)^C[2])                                             # 23
+  Hopfenberg with lag time: 100*(1-(1-C[1]*(t-C[2]))^C[3])                        # 24
+  Peppas-Sahlin: C[1]*t^C[2]+C[3]*t^(2*C[2])                                      # 25
+  Peppas-Sahlin with lag time: C[1]*(t-C[2])^C[3]+C[4]*(t-C[2])^(2*C[3])          # 26
+  Quadratic: 100*(C[1]*t^2+C[2]*t)                                                # 27
+  Quadratic with lag time: 100*(C[1]*(t-C[2])^2+C[3]*(t-C[2]))                    # 28
+  Logistic: C[1]/1+exp(-C[2]*(t-C[3]))                                            # 29
+  Logistic with lag time: C[1]/1+exp(-C[2]*((t-C[3])-C[4]))                       # 30
+  Gompertz: 100*(exp(-C[1]*(exp(-C[2]*log10(t)))))                                # 31
+  Gompertz with lag time: 100*(exp(-C[1]*(exp(-C[2]*log10(t-(C[3]))))))           # 32
+  Makoid-Banakar: C[1]*t^C[2]*exp(-C[3]*t)                                        # 33
+  Makoid-Banakar with lag time: C[1]*(t-C[2])^C[3]*exp(-C[4]*(t-C[2]))            # 34
+  Baker-Lonsdale: 100*(3/2*(1-(1-C[1])^(2/3))-C[2]*t)                             # 35
+  Baker-Lonsdale with lag time: 100*(3/2*(1-(1-C[1])^(2/3))-C[2]*(t-C[3]))        # 36
